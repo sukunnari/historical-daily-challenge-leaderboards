@@ -1,0 +1,25 @@
+{
+  "name": "historical-daily-challenge-leaderboards",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx --env-file=.env --watch src/index.tsx",
+    "build": "tsc",
+    "start": "node --env-file=.env dist/src/index.js",
+    "db:generate": "npx --env-file=.env drizzle-kit generate --config ./drizzle.config.ts",
+    "db:migrate": "npx --env-file=.env drizzle-kit migrate --config ./drizzle.config.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.1",
+    "@libsql/client": "^0.18.0",
+    "drizzle-orm": "^0.45.2",
+    "hono": "^4.13.7",
+    "osu-api-v2-js": "^3.0.5",
+    "prettier": "^3.9.6"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "drizzle-kit": "^0.31.10",
+    "tsx": "^4.23.0",
+    "typescript": "^7.0.2"
+  }
+}

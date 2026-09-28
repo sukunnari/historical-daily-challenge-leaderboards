@@ -1,0 +1,1 @@
+ALTER TABLE `scores` ADD `external_source` integer;
