@@ -49,7 +49,15 @@ manageApi.post("/add-room", async (c) => {
 		});
 	}
 
-	await addRoomWithPlaylist(room);
+	const result = await addRoomWithPlaylist(room);
+
+	if (!result.success) {
+		c.status(result?.suggestedHttpCode || 500);
+		return c.json({
+			success: false,
+			message: result?.message || "Internal server error",
+		});
+	}
 
 	c.status(200);
 	return c.json({
